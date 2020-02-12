@@ -1,6 +1,6 @@
 {
     "dataSource": "commits",
     "prefix": "",
-    "includeMessages": "all",
+    "includeMessages": "commits",
     "changelogFilename": "CHANGELOG.md"
 }
