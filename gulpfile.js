@@ -27,7 +27,7 @@ const
   header            =  require('gulp-header'),
   clean             =  require('gulp-clean'),
   pngquant          =  require('imagemin-pngquant'),
-  mozjpeg           =  require ('imagemin-mozjpeg'),
+  mozjpeg           =  require('imagemin-mozjpeg'),
   scaleImages       =  require('gulp-scale-images'),
   flatMap           =  require('flat-map').default,
   path              =  require('path'),
@@ -123,7 +123,7 @@ const
   // Minimize all of the images located under './assets/img/'
   // Only touches .jpg, .jpeg, .png, and .svg files
   function minimizeImages(cb) {
-    return gulp.src('./assets/img/**/*.{jpg,jpeg,png,svg,ico}')
+    return gulp.src('./assets/img/*.{jpg,jpeg,png,svg,ico}')
       .pipe(newer('./_site/assets/img/'))
       .pipe(flatMap(retinaVersions))
       .pipe(scaleImages(imageFileName))
@@ -170,8 +170,7 @@ const
 
   exports.build = gulp.series(
     cleanJekyll,
-    minimizeImages,
-    cssDev,
+    gulp.parallel(minimizeImages, cssDev),
     buildJekyll
   );
 
