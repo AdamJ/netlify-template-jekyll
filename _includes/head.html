@@ -1,0 +1,16 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="Description" content="{{ site.description }}">
+  <title>{% if page.section == "home" %}{{ site.title }}{% else %} Jekyll Netlify Template: {{ page.title | default: site.title }}{% endif %}</title>
+  <link rel="shortcut icon" href="{{ "/assets/img/favicon.ico" }}">
+  <link rel="prefetch stylesheet" href="{{ "/assets/prism/prism.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {% if jekyll.environment == 'production' and site.analytics %}
+    {% include analytics.html %}
+  {% endif %}
+  <script async src="{{ "/assets/prism/prism.js" | relative_url }}"></script>
+  <!-- Font Awesome 5 - Free -->
+  <script src="https://kit.fontawesome.com/1e6317e1f5.js" crossorigin="anonymous"></script>
+  <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
