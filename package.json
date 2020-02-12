@@ -1,6 +1,6 @@
 {
   "name": "netlify-template-jekyll",
-  "version": "",
+  "version": "0.1.0",
   "description": "A Jekyll Netlify Template built using PatternFly",
   "main": "index.js",
   "engines": {
